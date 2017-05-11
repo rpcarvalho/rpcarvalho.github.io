@@ -1,12 +1,15 @@
 function Flappy() {
 	this.x = width/3;
-	this.y = height/2;
-	this.size = 10;
+	this.y = height/3;
+	this.size = 20;
 	this.speed = 0;
 	
 	this.update = function(){
-		y += speed;
-		speed += 3;
+		this.y += this.speed;
+		this.speed += 1;
+		if (this.y + this.size >= height) {
+			this.speed = 0;
+		}
 	}
 	
 	this.show = function(){
@@ -15,10 +18,12 @@ function Flappy() {
 	}
 }
 
+
+
 var f;
 
 function setup() {
-  // Create the canvas
+  frameRate(30);
   createCanvas(720, 400);
   background(200);
   f = new Flappy();
@@ -28,4 +33,10 @@ function draw() {
   background(200);
   f.update();
   f.show();
+}
+
+function keyPressed() {
+	if (keyCode == 32){
+		f.speed = -10;
+	}
 }
