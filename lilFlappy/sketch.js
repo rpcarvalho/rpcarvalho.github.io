@@ -9,6 +9,7 @@ function Flappy() {
 		this.speed += 1;
 		if (this.y + this.size >= height) {
 			this.speed = 0;
+			this.y = height - this.size - 1;
 		}
 	}
 	
