@@ -1,5 +1,5 @@
 var cors = "https://crossorigin.me/";
-var url  = cors + "https://ukulele-chords.com/get?ak=99bf9dfc669e2fbc948ae7e89fe3efbe&r=C&typ=sus2";
+var url  = "https://ukulele-chords.com/get?ak=ad7602154409b93139d5624378066908&r=C&typ=sus2";
 var xml;
 
 function setup() {
