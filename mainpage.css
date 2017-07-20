@@ -1,15 +1,19 @@
+:root {
+}
+
 html {
     margin: 0;
     padding: 0;
 }
 body {
 	font-family: "Covered By Your Grace";
-    font-size: 35pt;
+    font-size: 300%;
     background-color: #B0B0B0;
     padding: 0px;
     margin-left: 6%;
 	margin-right: 6%;
 	margin-top: 10%;
+	margin-bottom: 0px;
 	text-align: center;
 }
 
@@ -49,17 +53,19 @@ a:active {
 	font-size: 280%;
 	font-weight: 500;
 	margin-bottom: -8%;
+	margin-right: calc(var(--rand3)*35%);
 }
 .pagina {
 	text-align: left;
 	font-size: 180%;
 	font-weight: 400;
 	margin-bottom: -10%;
+	margin-left: calc(var(--rand2)*24%);
 }
 .pagina2 {
 	text-align: left;
 	font-size: 180%;
 	font-weight: 400;
 	margin-bottom: -10%;
-	margin-left: 12%;
+	margin-left: calc(var(--rand1)*30%);
 }
