@@ -1,0 +1,65 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+body {
+	font-family: "Covered By Your Grace";
+    font-size: 35pt;
+    background-color: #B0B0B0;
+    padding: 0px;
+    margin-left: 6%;
+	margin-right: 6%;
+	margin-top: 10%;
+	text-align: center;
+}
+
+b {
+	font-size: 140%;
+	font-weight: 800;
+}
+
+a:link {
+    color: black; 
+    background-color: transparent; 
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #292929;
+    background-color: transparent;
+    text-decoration: none;
+	font-size: 120%;
+	line-height:18pt;
+}
+
+a:active {
+    color: #666666;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.titulo  {
+	text-align: right;
+	font-size: 280%;
+	font-weight: 500;
+	margin-bottom: -8%;
+}
+.pagina {
+	text-align: left;
+	font-size: 180%;
+	font-weight: 400;
+	margin-bottom: -10%;
+}
+.pagina2 {
+	text-align: left;
+	font-size: 180%;
+	font-weight: 400;
+	margin-bottom: -10%;
+	margin-left: 12%;
+}
