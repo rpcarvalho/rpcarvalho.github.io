@@ -1,4 +1,8 @@
 :root {
+	--color-bg: #B0B0B0;
+	--color-txt1: black;
+	--color-txt2: #292929;
+	--color_txt3: #666666;
 }
 
 html {
@@ -8,7 +12,8 @@ html {
 body {
 	font-family: "Covered By Your Grace";
     font-size: 300%;
-    background-color: #B0B0B0;
+    background-color: var(--color-bg);
+	color: var(--color-txt1);
     padding: 0px;
     margin-left: 6%;
 	margin-right: 6%;
@@ -23,19 +28,19 @@ b {
 }
 
 a:link {
-    color: black; 
+    color: var(--color-txt1); 
     background-color: transparent; 
     text-decoration: none;
 }
 
 a:visited {
-    color: black;
+    color: var(--color-txt1);
     background-color: transparent;
     text-decoration: none;
 }
 
 a:hover {
-    color: #292929;
+    color: var(--color-txt2);
     background-color: transparent;
     text-decoration: none;
 	font-size: 120%;
@@ -43,7 +48,7 @@ a:hover {
 }
 
 a:active {
-    color: #666666;
+    color: var(--color-txt3);
     background-color: transparent;
     text-decoration: none;
 }

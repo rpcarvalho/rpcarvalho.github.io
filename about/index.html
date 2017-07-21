@@ -3,23 +3,46 @@
 <head>
   <title>rpcarvalho's about</title>
   <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet">
-  <link rel="stylesheet" href="ui.css">
+  <link rel="stylesheet" href="../ui/ui.css">
 </head>
 <body>
+
+	<!-- Header -->
+	<a href="../index.html"><img src="../logo.png" alt"Home" class="img-circle" id="home"/></a>
 	<h1>About Me</h1>
+	<!-- /Header -->
+	
 	
 	<div class="column">
-		<p id="typewriter">	
-				I'm Rui Carvalho 
-		/n	Something I'll probably write later
-		/n	... maybe... I think...
+		<div id="tw">
+		&nbsp;
+		
+		<p id="belowtext"> I'm Rui Carvalho 
+			<br/>Something I'll probably write later, till the text drops
+			<br/>... maybe... I think...
 		</p>
+		<p id="typewriter">	I'm Rui Carvalho 
+			Something I'll probably write later, till the text drops
+			... maybe... I think...
+		</p>
+		
+		</div>
+		
 	</div>
 	
 	<div class="column">
 		<img src="myPicture.jpg" alt="=D" class="img-circle"/>
 	</div>
-
-	<script language="javascript" type="text/javascript" src="ui.js"></script>
+	
+	<!-- Scripts -->
+	<script language="javascript" type="text/javascript" src="../scripts/typewriter.js"></script>
+	<script language="javascript" type="text/javascript" src="../scripts/css.js"></script>
+	<script>
+		window.onload = function() {
+			cssInit();
+			typewriterInit(100);
+		}
+	</script>
+	<!-- /Scripts -->
 </body>
 </html>
