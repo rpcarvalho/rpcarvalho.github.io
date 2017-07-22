@@ -32,12 +32,11 @@ p {
 
 #home {
 	position: absolute;
-	top: -35px;
-	left: -35px;
+	top: -30px;
+	left: -30px;
 }
 #home:hover {
-	top: 0px;
-	left: 0px;
+	transform: translate(20px, 20px);
 }
 
 
@@ -48,10 +47,10 @@ p {
 }
 
 .column {
-     width:calc(95%/var(--nrColunas));
-     float:left;
-	 margin-left: 9%;
-	 margin-right: -19%;
+    width:calc(95%/var(--nrColunas));
+    float:left;
+	margin-left: 9%;
+	margin-right: -19%;
 	 
 }
 
@@ -78,4 +77,77 @@ p {
 
 #tw:hover {
 	visibility: visible;
+}
+
+.social {
+	height: 80px;
+}
+.social:hover {
+	transform:scale(1.2);
+}
+
+.square {
+	text-align: center;
+}
+
+.categoria {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+	margin: 30px;
+	width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: left;
+}
+
+.teste {
+	display: inline-block;
+	margin:auto;
+}
+
+a:link {
+    color: var(--color-txt1); 
+    background-color: transparent; 
+    text-decoration: none;
+}
+a:visited {
+    color: var(--color-txt1);
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: var(--color-txt2);
+    background-color: transparent;
+    text-decoration: none;
+	font-size: 120%;
+	line-height:18pt;
+}
+a:active {
+    color: var(--color-txt3);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+#imgbox {
+	border: 0px transparent;
+	height: 100px;
+	position: absolute;
+	top: -100px;
+	left: -100px;
+}
+
+.proj {
+	
+}
+
+.note {
+	background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+	margin: 30px;
+	width: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	float: left;
 }
