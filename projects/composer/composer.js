@@ -33,6 +33,7 @@ var composition = document.getElementById("composition");
 var comp = [];
 var comp_i = 0;
 var comp_interval;
+var comp_time = 400;
 
 function getComposition(t){
 	comp = t.value.split(" ");
@@ -48,7 +49,7 @@ function playComposition(){
 
 function startComposition(){
 	clearInterval(comp_interval);
-	comp_interval = setInterval(playComposition, 800);
+	comp_interval = setInterval(playComposition, comp_time);
 }
 
 function stopComposition(){
@@ -68,6 +69,7 @@ function createNode(note){
 	var div = document.getElementById("notesContainer");
 	var p = document.createElement("div");
 	p.classList.add("note");
+	p.onclick = function() {	changeNote(this); };
 	var node = document.createTextNode(note);
 	p.appendChild(node);
 	div.appendChild(p);
@@ -79,4 +81,46 @@ function highlightNote(note){
 	for(var i=0; i< node.length; i++)
 		node[i].style.color = "black";
 	node[note].style.color = "blue";
+}
+
+function changeNote(t){
+	var newNote = prompt("New note", t.innerHTML);
+
+	if (newNote == null || newNote == "") {
+	} else {
+		t.innerHTML = newNote;
+		comp[getNodeIndex(t)] = newNote;		
+		createSquareNotes();
+	}
+}
+
+function createSquareNotes(){
+	composition.value = "";
+	for(var i=0; i<comp.length; i++)
+			composition.value += comp[i] + " ";
+}
+
+function addNote(){
+	var newNote = prompt("New note", "440");
+
+	if (newNote == null || newNote == "") {
+	} else {
+		comp.push(newNote);		
+		createSquareNotes();
+		createNoteSquares();
+	}
+}
+
+function changeTimer(t){
+	comp_time = t.value;
+}
+
+function getNodeIndex(node) {
+    var index = 0;
+    while ( (node = node.previousSibling) ) {
+        if (node.nodeType != 3 || !/^\s*$/.test(node.data)) {
+            index++;
+        }
+    }
+    return index;
 }

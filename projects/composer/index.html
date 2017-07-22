@@ -9,16 +9,18 @@
 	<!-- Header -->
 	<a href="../index.html"><img src="../../logo.png" alt"Home" class="img-circle" id="home"/></a>
 	<h1>composer</h1>
-	
-	
-	<input type="number" id="note" value="440" onchange="changeNote(this);"/>
 	<p>
-		<input type="text" id="composition" value="440 330" onchange="getComposition(this);"/>
+		<input type="text" id="composition" value="392 261 329 349" onchange="getComposition(this);" size="100"/>
 		<input type="button" value="Play" onclick="startComposition();"/>
 		<input type="button" value="Stop" onclick="stopComposition();"/>
+		<input type="text" value="400" onchange="changeTimer(this);" size="4"/>
 	</p>
 	<div id="notesContainer">
 		
+	</div>
+		
+	<div  id="noteAdd" onclick="addNote();">
+		Add
 	</div>
 	
 	<!-- Scripts -->
@@ -26,7 +28,6 @@
 	<script src="composer.js"></script>
 	<script>
 		window.onload = function() {
-			composerInit();
 			getComposition(composition);
 		}
 	</script>
