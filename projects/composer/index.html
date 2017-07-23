@@ -9,12 +9,14 @@
 	<!-- Header -->
 	<a href="../index.html"><img src="../../logo.png" alt"Home" class="img-circle" id="home"/></a>
 	<h1>composer</h1>
-	<p>
-		<input type="text" id="composition" value="392 261 329 349" onchange="getComposition(this);" size="100"/>
+		
+	<p><form action="index.html" method="get">
+		<input type="text" id="composition" name="notes"  value="C4 D4 E4 F4 G4 A5 B5 C5 C5 B5 A5 G4 F4 E4 D4 C4" onchange="getComposition(this);" size="100"/>
 		<input type="button" value="Play" onclick="startComposition();"/>
 		<input type="button" value="Stop" onclick="stopComposition();"/>
-		<input type="text" value="400" onchange="changeTimer(this);" size="4"/>
-	</p>
+		<input type="text" value="550" name="time" onchange="changeTimer(this);" size="4"/>
+		<input type="submit" value="Save">
+	</form></p>
 	<div id="notesContainer">
 		
 	</div>
@@ -28,6 +30,7 @@
 	<script src="composer.js"></script>
 	<script>
 		window.onload = function() {
+			readURL();
 			getComposition(composition);
 		}
 	</script>

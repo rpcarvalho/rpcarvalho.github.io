@@ -1,43 +1,43 @@
-var c_interval;
-var c_on = true;
-var sine = T("sin", {freq:440, mul:0.5});
+var composition = document.getElementById("composition");
+var comp = [];
+var comp_i = 0;
+var comp_interval;
+var comp_time = 400;
+var C_freq = [16.35,32.70,65.41,130.81,261.63,523.25,1046.5,2093.0,4186.01];
+var notes_name = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#"];
 
-
-
-function composerInit(){
-	//sine.set({freq:880});
-	//c_interval = setInterval(playNote,900);
-	playNote(3300);
-}
-
-function playNote(){
-	T("perc", {r:500}, sine)
-		.on("ended", function() {	this.pause();	})
-		.bang().play();
-}
-
-function playNote(f){
+function playFrequency(f){
 	f = T(parseInt(f));
 	var s = T("sin", {freq:f, mul:0.5});
 	T("perc", {r:500}, s)
 		.on("ended", function() {	this.pause();	})
 		.bang().play();
 }
-
-function changeNote(t){
-	var f = T(parseInt(t.value));
-	sine.set({freq:f});
+function playNote(n){
+	var octave = parseInt(n.substr(n.length-1,1));
+	var note = n.substring(0,n.length-1);
+	var note_index = notes_name.indexOf(note);
+	var steps = note_index + (12 * (octave-4));
+	note = 440 * Math.pow(1.059463094359,steps);
+	playFrequency(note);
 }
-
-var composition = document.getElementById("composition");
-var comp = [];
-var comp_i = 0;
-var comp_interval;
-var comp_time = 400;
 
 function getComposition(t){
 	comp = t.value.split(" ");
 	createNoteSquares();
+}
+
+function readURL(){
+	var time = get(1);
+	var notes = get(0);
+	if(time){
+		comp_time = time;
+	}
+	if(notes){
+		notes = notes.replace(/\+/g, " ");
+		notes = notes.trim();
+		document.getElementById("composition").value = notes;
+	}
 }
 
 function playComposition(){
@@ -123,4 +123,14 @@ function getNodeIndex(node) {
         }
     }
     return index;
+}
+
+function get(index){
+	var url = document.URL;
+	if(-1 == url.indexOf('?'))
+		return false;
+	url = url.substring(url.indexOf('?')+1);
+	var data = url.split('&');
+	var value = data[index].substring(data[index].indexOf('=')+1);
+	return value;
 }
