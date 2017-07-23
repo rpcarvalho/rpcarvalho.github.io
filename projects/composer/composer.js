@@ -36,6 +36,8 @@ function readURL(){
 	if(notes){
 		notes = notes.replace(/\+/g, " ");
 		notes = notes.trim();
+		while(-1 != notes.search("%23"))
+			notes = notes.replace("%23", "#");
 		document.getElementById("composition").value = notes;
 	}
 }
