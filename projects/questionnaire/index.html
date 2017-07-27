@@ -1,22 +1,44 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>composer</title>
+	<title>questionnaire</title>
 	<link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet">
 	<link rel="stylesheet" href="../../ui/ui.css">
+	<style>
+		.answer {
+			background-color: #fff;
+			padding: 15px;
+			margin-bottom: 10px;
+			border-radius: 10px;
+			margin: 15px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			cursor: pointer;
+			display: inline-block
+		}
+		
+		.answer:hover {
+			transform: scale(1.1);
+		}
+	</style>
 </head>
 <body>
 	<!-- Header -->
 	<a href="../index.html"><img src="../../logo.png" alt"Home" class="img-circle" id="home"/></a>
-	<h1>questionnaire</h1>
-		
+	<h1>questionnaire á à â ã</h1>
+	<h2 id="question">Pergunta?</h2>
+	<p class="answer" onclick="Q.click(this);"> Resposta </p><br>
+	<p class="answer" onclick="Q.click(this);"> Resposta </p><br>
+	<p class="answer" onclick="Q.click(this);"> Resposta </p><br>
+	<p class="answer" onclick="Q.click(this);"> Resposta </p>
 	
 	<!-- Scripts -->
-	<script src="data.js"></script>
-	<script src="questionnaire.js"></script>
+	<script src="data.js" charset="utf-8"></script>
+	<script src="questionnaire.js" charset="utf-8"></script>
 	<script>
+		var	Q;
 		window.onload = function() {
-			Question();
+			Q = new Question();
+			console.log(Q.pts);
 		}
 	</script>
 </body>
