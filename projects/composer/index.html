@@ -4,6 +4,13 @@
 	<title>composer</title>
 	<link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet">
 	<link rel="stylesheet" href="../../ui/ui.css">
+	<style>
+		#noteAdd,
+		.note {
+			width: 100px;
+			float: left;
+		}
+	</style>
 </head>
 <body>
 	<!-- Header     C#4 B4 A4 E4 D4 C#4 B4 G#3 0 A4 B4 0 C#4 B4 G#3 B4 A4 0 A4 A4 B4 C#4 E4 0 D4 0 B4 G#3 0 A4 B4 0 0 0 -->
@@ -21,10 +28,9 @@
 		
 	</div>
 		
-	<div  id="noteAdd" onclick="addNote();">
+	<div  id="noteAdd" class="button" onclick="PopUp();">
 		Add
 	</div>
-	
 	<p>
 		<a href="index.html?notes=C%234+B4+A4+E4+D4+C%234+B4+G%233+0+A4+B4+0+C%234+B4+G%233+B4+A4+0+A4+A4+B4+C%234+E4+0+D4+0+B4+G%233+0+A4+B4+0+0+0&time=450" >
 		Ver Avioes
@@ -37,6 +43,7 @@
 		window.onload = function() {
 			readURL();
 			getComposition(composition);
+			//PopUp();
 		}
 	</script>
 </body>

@@ -71,6 +71,7 @@ function createNode(note){
 	var div = document.getElementById("notesContainer");
 	var p = document.createElement("div");
 	p.classList.add("note");
+	p.classList.add("button");
 	p.onclick = function() {	changeNote(this); };
 	var node = document.createTextNode(note);
 	p.appendChild(node);
@@ -80,9 +81,12 @@ function createNode(note){
 function highlightNote(note){
 	var div = document.getElementById("notesContainer");
 	var node = div.getElementsByClassName("note");
-	for(var i=0; i< node.length; i++)
-		node[i].style.color = "black";
-	node[note].style.color = "blue";
+	for(var i=0; i< node.length; i++){
+		node[i].style.color = "var(--color-txt1)";
+		node[i].style.backgroundColor = "var(--color-button)";
+	}
+	node[note].style.color = "var(--color-txt-inv)";
+	node[note].style.backgroundColor = "var(--color-txt2)";
 }
 
 function changeNote(t){
@@ -135,4 +139,41 @@ function get(index){
 	var data = url.split('&');
 	var value = data[index].substring(data[index].indexOf('=')+1);
 	return value;
+}
+
+function PopUp(){
+	
+	this.close = function(){
+		var el = document.getElementsByClassName("background")[0];
+		el.parentNode.removeChild(el);
+	}
+	
+	this.list = function(array){
+		var list = "<select>"
+		for (var i=0; i<array.length; i++){
+			list += '<option value="' + i + '">' + array[i] + '</option>';
+		}
+		list += '</select>';
+		return list;
+	}
+	
+	this.box = function (){
+		var box = document.createElement("div");
+		box.classList.add("box");
+		var node = document.createTextNode("gelel");
+		box.appendChild(node);
+		box.innerHTML = this.list(notes_name);
+		return box;
+	}
+	
+	this.background = function (){
+		var bg = document.createElement("div");
+		bg.classList.add("background");
+		//bg.onclick = this.close;
+		bg.appendChild(this.box());
+		return bg;
+	}
+	
+	var body = document.getElementsByTagName("BODY")[0];
+	body.appendChild(this.background());
 }
