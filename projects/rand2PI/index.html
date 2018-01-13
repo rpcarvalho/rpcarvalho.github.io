@@ -1,0 +1,40 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Rand2Pi</title>
+	<link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet">
+	<link rel="stylesheet" href="../../ui/ui.css">
+	<style>
+		.answer {
+			margin: 15px;
+			display: inline-block
+		}
+	</style>
+</head>
+<body>
+	<!-- Header -->
+	<a href="../index.html"><img src="../../logo.png" alt"Home" class="img-circle" id="home"/></a>
+	<h1>Rand2Pi</h1>
+	<p>Number A: 
+	<span id="nA">0</span> 
+	</p>
+	
+	<p>Number B: 
+	<span id="nB">0</span> 
+	</p>
+	<p>Iteration: 
+	<span id="it">0</span> 
+ Co-Primes: 
+	<span id="cp">0</span> 
+	</p>
+	
+	<p>PI: 
+	<span id="pi">0</span> 
+	</p>
+	
+	<p class="button" onclick="start();"> Start </p>
+	<p class="button" onclick="stop();"> Stop </p>
+	<!-- Scripts -->
+	<script src="rand2pi.js" charset="utf-8"></script>
+</body>
+</html>
