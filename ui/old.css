@@ -13,28 +13,35 @@ html {
     padding: 0;
 }
 body {
-    font-size: large;
+    font-size: xx-large;
 	background-color: var(--color-bg);
 	color: var(--color-txt1);
     padding: 0px;
     margin: 3%;
-	margin-top:1%;
-	text-align: justify;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: center;
 }
 
 h1 {
-	font-weight: normal;
+	font-size: 200%;
+	font-weight: 500;
+}
+p {
+	font-size: 100%;
 }
 
-footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 50px;
-    width: 97%;
-    overflow: hidden;
-	padding-left:3%;
+#home {
+	position: absolute;
+	top: -30px;
+	left: -30px;
+	transition: transform 1s;
 }
+#home:hover {
+	
+	transform: translate(20px, 20px);
+}
+
 
 .img-circle {
     border: 3px solid white;
@@ -47,12 +54,18 @@ footer {
     float:left;
 	margin-left: 9%;
 	margin-right: -19%;
+	 
 }
 
-.column2 {
-    width:40%;
-    float:left;
-	margin-right: 7%;
+.social {
+	height: 80px;
+}
+.social:hover {
+	transform:scale(1.2);
+}
+
+.square {
+	text-align: center;
 }
 
 .categoria {
@@ -71,11 +84,6 @@ footer {
 	margin:auto;
 }
 
-
-a { 
-	display: inline-block; 
-}
-
 a:link {
     color: var(--color-txt1); 
     background-color: transparent; 
@@ -90,7 +98,8 @@ a:hover {
     color: var(--color-txt2);
     background-color: transparent;
     text-decoration: none;
-	transform: scale(1.1);
+	font-size: 120%;
+	line-height:18pt;
 }
 a:active {
     color: var(--color-txt3);

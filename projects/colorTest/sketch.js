@@ -38,11 +38,11 @@ function createBoxes(){
 	shuf(bxs);
 	
 	for(var i=0; i<bx_size; i++)
-		bxs[i].y = i*(s) + 20;
+		bxs[i].y = i*(s) + 50;
 }
 
 function drawBoxes(){
-	background(200);
+	background(255);
 	for(var i=0; i<bx_size; i++){
 		fill(r,g,bxs[i].color);
 		rect(bxs[i].x,bxs[i].y,s,s);
@@ -58,14 +58,14 @@ function checkOrder(){
 			return false;
 		temp_color = bxs[i].color;
 	}
-	background(0,255,100);
+	background(0,255,0);
 	return true;
 }
 
 
 function setup() {
 	createCanvas(320,480);
-	background(200);
+	background(0);
 	
 	
 	createBoxes();
